@@ -12,7 +12,6 @@ defmodule Exlivery.Orders.Order do
        delivery_address: nil,
        items: nil,
        total_price: nil
-
      }}
   end
 
