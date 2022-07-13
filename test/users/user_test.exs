@@ -2,34 +2,29 @@ defmodule Exlivery.Users.UserTest do
   use ExUnit.Case
   alias Exlivery.Users.User
 
+  import Exlivery.Factory
+
   describe "build/5" do
     test "when all params are valid, returns the user" do
-      address = "Rua de para teste de usuario"
-      cpf = "22635262814"
+      address = "Vila aparecida, 91"
+      cpf = "123456789"
       name = "Eduardo"
-      email = "edu.grangeiro2002@gmail.com"
+      email = "eduardo.grangeiro@gmail.com"
       age = 19
 
       response = User.build(email, name, address, cpf, age)
 
       expected_response =
-        {:ok,
-          %User{
-          address: "Rua de para teste de usuario",
-          age: 19,
-          cpf: "22635262814",
-          email: "edu.grangeiro2002@gmail.com",
-          name: "Eduardo"
-        }}
+        {:ok, build(:user)}
 
       assert response == expected_response
     end
 
     test "when age is invalid params, returns an error" do
-      address = "Rua de para teste de usuario"
-      cpf = "22635262814"
+      address = "Vila aparecida, 91"
+      cpf = "123456789"
       name = "Eduardo"
-      email = "edu.grangeiro2002@gmail.com"
+      email = "eduardo.grangeiro@gmail.com"
       age = 17
 
       response = User.build(email, name, address, cpf, age)
@@ -40,10 +35,10 @@ defmodule Exlivery.Users.UserTest do
     end
 
     test "when cpf is invalid params, returns an error" do
-      address = "Rua de para teste de usuario"
-      cpf = 22635262814
+      address = "Vila aparecida, 91"
+      cpf = 123456789
       name = "Eduardo"
-      email = "edu.grangeiro2002@gmail.com"
+      email = "eduardo.grangeiro@gmail.com"
       age = 19
 
       response = User.build(email, name, address, cpf, age)
