@@ -14,8 +14,7 @@ defmodule Exlivery.Users.UserTest do
 
       response = User.build(email, name, address, cpf, age)
 
-      expected_response =
-        {:ok, build(:user)}
+      expected_response = {:ok, build(:user)}
 
       assert response == expected_response
     end
@@ -29,24 +28,23 @@ defmodule Exlivery.Users.UserTest do
 
       response = User.build(email, name, address, cpf, age)
 
-      expected_response ={:error, "Invalid parameters"}
+      expected_response = {:error, "Invalid parameters"}
 
       assert response == expected_response
     end
 
     test "when cpf is invalid params, returns an error" do
       address = "Vila aparecida, 91"
-      cpf = 123456789
+      cpf = 123_456_789
       name = "Eduardo"
       email = "eduardo.grangeiro@gmail.com"
       age = 19
 
       response = User.build(email, name, address, cpf, age)
 
-      expected_response ={:error, "Invalid parameters"}
+      expected_response = {:error, "Invalid parameters"}
 
       assert response == expected_response
     end
   end
-
 end

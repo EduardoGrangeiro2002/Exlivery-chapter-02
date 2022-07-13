@@ -3,6 +3,8 @@ defmodule Exlivery.Factory do
 
   alias Exlivery.Users.User
 
+  alias Exlivery.Orders.Item
+
   def user_factory do
     %User{
       name: "Eduardo",
@@ -12,5 +14,13 @@ defmodule Exlivery.Factory do
       address: "Vila aparecida, 91"
     }
   end
+    def item_factory do
+      %Item{
+        description: "Panqueca",
+        category: :prato_feito,
+        quantity: 8,
+        unity_price: Decimal.new("50.5")
+      }
+    end
 
 end
