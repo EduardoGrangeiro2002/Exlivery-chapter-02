@@ -3,10 +3,7 @@ defmodule Exlivery.Factory do
 
   alias Exlivery.Users.User
 
-  alias Exlivery.Orders.Item
-
-  alias Exlivery.Orders.Order
-
+  alias Exlivery.Orders.{Item, Order}
 
   def user_factory do
     %User{
