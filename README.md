@@ -19,3 +19,8 @@ Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_do
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at <https://hexdocs.pm/exlivery>.
 
+# alias Exlivery.Users.User
+
+# {:ok, user} = User.build("edu.grangeiro2002@gmail.com", "eduardo", "lavapes", "12241421", 19)
+
+# alias Exlivery.Orders.Item
